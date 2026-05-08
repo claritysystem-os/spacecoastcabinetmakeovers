@@ -1135,10 +1135,6 @@
         <input type="text" id="contact-name" placeholder="Jane Smith" />
       </div>
       <div class="field-group">
-        <label>Phone Number</label>
-        <input type="tel" id="contact-phone" placeholder="(321) 555-0100" />
-      </div>
-      <div class="field-group">
         <label>Email Address</label>
         <input type="email" id="contact-email" placeholder="jane@email.com" />
       </div>
@@ -1429,10 +1425,9 @@
   // ── CONTACT SUBMIT ──
   function submitContact() {
     state.answers.name = document.getElementById('contact-name').value.trim();
-    state.answers.phone = document.getElementById('contact-phone').value.trim();
     state.answers.email = document.getElementById('contact-email').value.trim();
-    if (!state.answers.name || !state.answers.phone || !state.answers.email) {
-      alert('Please fill in your name, phone, and email to continue.');
+    if (!state.answers.name || !state.answers.email) {
+      alert('Please fill in your name and email to continue.');
       return;
     }
     goSection('booking');
@@ -1510,7 +1505,6 @@
 
     // fill contact fields
     document.getElementById('contact-name').value = state.answers.name;
-    document.getElementById('contact-phone').value = state.answers.phone;
     document.getElementById('contact-email').value = state.answers.email;
 
     if (type === 'low') {
